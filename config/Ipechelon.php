@@ -4,6 +4,7 @@ return [
     'parser' => [
         'name'          => 'IP-Echelon',
         'enabled'       => true,
+        'report_file'   => '/^.*\.xml/i',
         'sender_map'    => [
             '/@ip-echelon.(com|us)/',
         ],
