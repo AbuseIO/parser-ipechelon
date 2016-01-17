@@ -1,7 +1,7 @@
 {
     "name": "abuseio/parser-ipechelon",
     "description": "Parser addon for handling notifications from ip echelon",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "keywords": ["laravel", "abuseio", "parser", "ipechelon"],
     "homepage": "http://abuse.io",
     "type": "library",
