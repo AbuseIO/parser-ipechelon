@@ -49,14 +49,18 @@ class Ipechelon extends Parser
         // nothing found in attachments.
         if ($foundAcnsFile === false) {
             if (preg_match(
-                '/\<\?xml.*\<\/Infringement\>/s',
+                '/(?<xml>\<\?xml.*\<\/Infringement\>)/s',
                 $this->parsedMail->getMessageBody(),
                 $match
-            )
+            ) !== false
             ) {
-                $xmlReport = $match[1];
+                if (!empty($match['xml'])) {
+                    $xmlReport = $match['xml'];
 
-                $this->saveIncident($xmlReport);
+                    $this->saveIncident($xmlReport);
+                } else {
+                    $this->warningCount++;
+                }
             } else {
                 $this->warningCount++;
             }
