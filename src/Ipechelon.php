@@ -34,7 +34,7 @@ class Ipechelon extends Parser
         foreach ($this->parsedMail->getAttachments() as $attachment) {
             // Only use the Copyrightcompliance formatted reports, skip all others
             if (preg_match(config("{$this->configBase}.parser.report_file"), $attachment->getFilename()) &&
-                $attachment->contentType == 'application/xml'
+                $attachment->getContentType() == 'application/xml'
             ) {
                 $foundAcnsFile = true;
 
