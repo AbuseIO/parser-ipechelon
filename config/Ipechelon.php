@@ -7,6 +7,7 @@ return [
         'report_file'   => '/^.*\.xml/i',
         'sender_map'    => [
             '/@ip-echelon.(com|us)/',
+            '/@copyright.ip-echelon.(com|us)/',
         ],
         'body_map'      => [
             //
